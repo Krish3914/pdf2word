@@ -1,13 +1,15 @@
 from django.shortcuts import render,redirect
-# from .models import *
+from .models import *
 # import os
      
 # Create your views here.
 def convert(request):
-#      if request.method == "POST":
-#           data = request.POST
-#           receipe_image = request.FILES.get('receipe_image')
-#           pdf1.objects.create(receipe_image=receipe_image)
+    if request.method == "POST":
+
+        data = request.POST
+        pdf_name = request.FILES.get('pdf_name')
+        pdf_class.objects.create(pdf_name=pdf_name)
+        print('submitted')
 #           if str(receipe_image).endswith('.pdf'):
 #                print("submitted")
 #                from pdf2docx import Converter
@@ -27,10 +29,11 @@ def convert(request):
 #                print(f"downloadind {docx_file}")
 #                return render(request,'pd.html',context)
      
-#      queryset = pdf1.objects.all()
+    queryset = pdf_class.objects.all()
+    
+    context = {'p':queryset}  
      
-#      context = {'receipes':queryset}   
- 
-     return render(request,"pdf_2_word.html")
+
+    return render(request,"pdf_2_word.html",context)
 
 # /media/{{receipe.receipe_image}}
