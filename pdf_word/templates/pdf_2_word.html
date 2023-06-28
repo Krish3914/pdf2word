@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container mt-5">
+    <form class="card p-3 col-12" method="post" enctype="multipart/form-data">
+      {%csrf_token%}
+      <h2 style="text-align: center;">Upload pdf</h2>
+      <hr> 
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Pdf doc</label>
+          <input name = "pdf_name" type="file" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+</body>
+</html>
+
