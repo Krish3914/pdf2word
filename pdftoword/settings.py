@@ -58,7 +58,7 @@ ROOT_URLCONF = 'pdftoword.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["pdf_word//templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
